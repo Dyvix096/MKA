@@ -1,0 +1,28 @@
+.titulo{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    float: none;
+    text-align: center;
+}
+
+.botones{
+    float:none;
+    text-align:center;
+    width: 100%;
+}
+
+.div{
+    columns: 2;
+}
+
+.div #div1{
+    position: relative;
+    float:left;
+    width: 90%;
+}
+
+.div #div2{
+    position: relative;
+    width: 10%;
+}
+

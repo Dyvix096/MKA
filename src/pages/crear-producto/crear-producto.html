@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title class="titulo">Añadir nuevo Producto</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+<ion-item>
+  <ion-icon name="key" item-start></ion-icon>
+  <ion-label stacked>Nombre Producto</ion-label>
+  <ion-input [(ngModel)] = "item.NombreProducto"
+  placeholder="Introducir nombre producto"></ion-input>
+</ion-item>
+
+
+<ion-item>
+    <ion-icon name="archive" item-start></ion-icon>
+    <ion-label stacked>Estado del Producto</ion-label>
+    <ion-select [(ngModel)]="EstadoProducto"
+    [(ngModel)] = "item.EstadoProducto">
+      <ion-option value="CasiNuevo" >Casi nuevo</ion-option>
+      <ion-option value="Usado" >Usado</ion-option>
+      <ion-option valie="MuyUsado" >Muy usado</ion-option>
+    </ion-select>
+  </ion-item>
+
+<ion-item>
+  <ion-icon name="globe" item-start></ion-icon>
+  <ion-label stacked>Dirección</ion-label>
+  <ion-input [(ngModel)] = "item.Direccion"
+  placeholder="Dirección del producto"></ion-input>
+  <!--Mirar posibilidad de añadir mapas-->
+</ion-item>
+
+<div class = div>
+  
+  <div id = div1>
+<ion-item id ="Imagen">
+  <ion-icon name="images" item-start></ion-icon>
+  <ion-label stacked>Imagen/nes</ion-label>
+  <ion-input [(ngModel)] = "item.Imagen"
+  placeholder=""></ion-input>
+  <!--Mirar posibilidad de añadir mas de una imagen-->
+</ion-item>
+</div>
+<div id = div2>
+    <button ion-button id = "BotonModal"
+      (click)="mostrar_modal()">
+          <ion-icon name="add"></ion-icon>
+        </button>
+</div>
+</div>
+
+<ion-item>
+  <ion-icon name="" item-start></ion-icon>
+  <ion-label stacked>Descripción Producto</ion-label>
+  <ion-input [(ngModel)] = "item.Descripcion"
+  placeholder="Descripción Producto"></ion-input>
+</ion-item>
+
+</ion-content>
+
+<ion-footer>
+   <ion-buttons class = "botones">
+        <button ion-button
+        (click)="addItem(item)"
+>
+            Añadir Producto
+            <!--Faltar añadir la funcion para que al dar al boton se añada a firebase-->
+          </button>
+          
+          <button ion-button
+          (click) = IrPrincipal()> 
+            Cancelar
+            <!--Mirar como plantearlo como ir a pagina anterior o limpieza-->
+          </button>
+    </ion-buttons>
+</ion-footer>

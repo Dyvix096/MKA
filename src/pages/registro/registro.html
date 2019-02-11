@@ -1,0 +1,70 @@
+<ion-header>
+    <ion-title class ="titulo">Registro de Usuario</ion-title>
+</ion-header>
+
+<ion-content padding>
+<form [formGroup]="validacion">
+  <ion-list>
+    <ion-item>
+        <ion-icon name="person" item-start></ion-icon>
+        <ion-label stacked>Introducir Usuario</ion-label>
+        <ion-input
+          formControlName="nombre" 
+          type="text"
+          placeholder="Introducir nombre usuario"></ion-input>
+      </ion-item>
+      <!--Tabla validaciones Introducir Usuario-->
+      <ion-item *ngIf="validacion.get('nombre').errors && validacion.get('nombre').dirty">
+          <p color="danger" ion-text *ngIf="validacion.get('nombre').hasError('required')">Rellenar campo Usuario</p>
+          <p color="danger" ion-text *ngIf="validacion.get('nombre').hasError('minlength')">Minimo 3 valores para nombre Usuario</p>
+        </ion-item>
+      
+      <ion-item>
+        <ion-icon name="mail" item-start></ion-icon>
+        <ion-label stacked>Introducir Gmail</ion-label>
+        <ion-input 
+          formControlName="email" 
+          type="text" #username
+          placeholder="Introducir dirección de correo electrónico"></ion-input>
+        </ion-item>
+        <!--Tabla validaciones Email-->
+      <ion-item *ngIf="validacion.get('email').errors && validacion.get('email').dirty">
+          <p color="danger" ion-text *ngIf="validacion.get('email').hasError('required')">Rellenar campo Correo electrónico</p>
+          <p color="danger" ion-text *ngIf="validacion.get('email').hasError('email')">Tiene que ser una direccion mail valida</p>
+        </ion-item>
+
+      <ion-item>
+        <ion-icon name="key" item-start></ion-icon>
+        <ion-label stacked>Introducir Contraseña</ion-label>
+        <ion-input
+          formControlName="pass"
+          type="password" #password
+          placeholder="Introducir contraseña"></ion-input>
+      </ion-item>
+      <!--Tabla validaciones Pass-->
+      <ion-item *ngIf="validacion.get('pass').errors && validacion.get('pass').dirty">
+        <p color="danger" ion-text *ngIf="validacion.get('pass').hasError('required')">Rellenar campo Contraseña</p>
+        <p color="danger" ion-text *ngIf="validacion.get('pass').hasError('minlength')">Minimo 6 valores para campo Contraseña</p>
+      </ion-item>
+
+    </ion-list>
+    </form>
+</ion-content>
+
+<ion-footer>
+
+    <ion-buttons class = "botones">
+        <button ion-button 
+        (click)="registerUser()">
+            Confirmar
+            <!--Faltar añadir la funcion para que al dar al boton se añada a firebase-->
+          </button>
+          
+          <button ion-button
+          (click) = IrPrincipal()> 
+            Cancelar
+          </button>
+          <!--Mirar como plantearlo como ir a pagina anterior o limpieza-->
+    </ion-buttons>
+
+</ion-footer>

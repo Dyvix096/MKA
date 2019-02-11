@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-title class = "titulo">LOGIN</ion-title>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-icon name="person" item-start></ion-icon>
+    <!--Mirar si se puede hacer un marco para el icon?-->
+    <ion-label stacked>Usuario</ion-label>
+    <ion-input placeholder="Introducir nombre usuario" 
+    type="text" #username></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name="key" item-start></ion-icon>
+    <ion-label stacked>Contraseña</ion-label>
+    <ion-input placeholder="Introducir contraseña"
+    type="password" #password></ion-input>
+  </ion-item>
+  <!--Mirar boton para recordar password-->
+
+  <ion-item class="EntradaRegistro">
+    <ion-label
+    color = danger
+    (click) = IrRegistro()>
+      ¿No estas registrado? - Registrate aqui
+    </ion-label>
+
+    <ion-label
+    color = danger
+    (click) = RecuperarPass()>
+    ¿Olvidaste la contraseña? - Click aqui
+    </ion-label>
+  </ion-item>
+
+  <button ion-button full
+   (click)=signInUser()>
+    Iniciar Sesión
+  </button>
+
+</ion-content>

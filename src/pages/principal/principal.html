@@ -1,0 +1,21 @@
+<ion-header>
+    <div class = "div">
+        <div>
+          <button id = "boton" ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+        </div>
+        <div>
+          <ion-searchbar id = "BarraBusqueda"></ion-searchbar>
+        </div>
+      </div>
+  </ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor = "let item of listaProductos | async"
+              (click)="selectShoppingItem(item)">
+      <h1><b>{{item.NombreProducto}} </b></h1>
+    </ion-item>
+  </ion-list>
+</ion-content>
